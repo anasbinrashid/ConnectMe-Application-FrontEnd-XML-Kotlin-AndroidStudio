@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/caller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anas Bin Rashid"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp" />
+
+        <ImageView
+            android:id="@+id/callerimage"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/anas"
+            android:clipToOutline="true"
+            android:background="@drawable/roundimage" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:32"
+            android:textColor="@color/black"
+            android:layout_below="@id/callerimage"
+            android:textSize="23sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:id="@+id/call_controls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/roundbutton"
+            android:backgroundTint="#988B7E"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/roundimage"
+                android:backgroundTint="#857566"
+                android:clipToOutline="true"
+                tools:ignore="TouchTargetSizeCheck"
+                android:contentDescription="More Options"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/more" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/roundimage"
+                android:backgroundTint="#857566"
+                android:clipToOutline="true"
+                tools:ignore="TouchTargetSizeCheck"
+                android:src="@drawable/videocall"
+                android:layout_marginRight="10dp"
+                app:tint="@color/white"
+                android:contentDescription="Video" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/roundimage"
+                android:backgroundTint="#857566"
+                android:clipToOutline="true"
+                tools:ignore="TouchTargetSizeCheck"
+                android:src="@drawable/speaker"
+                android:layout_marginRight="10dp"
+
+                android:contentDescription="Speaker" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/roundimage"
+                android:backgroundTint="#857566"
+                android:clipToOutline="true"
+                tools:ignore="TouchTargetSizeCheck"
+                android:src="@drawable/mute"
+                android:layout_marginRight="10dp"
+
+                android:contentDescription="Mute" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/roundimage"
+                android:backgroundTint="#FF0000"
+                android:clipToOutline="true"
+                tools:ignore="TouchTargetSizeCheck"
+                android:src="@drawable/endcall"
+                android:contentDescription="End Call"
+                android:id="@+id/end"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

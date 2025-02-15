@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginLeft="10dp"
+    android:id="@+id/main"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_gravity="center_horizontal"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Profile"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Done"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#59442F"
+                android:id="@+id/done" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/profilePicture"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:src="@drawable/anas"
+                android:scaleType="centerCrop"
+                android:clipToOutline="true"
+                android:layout_centerInParent="true"
+                android:background="@drawable/roundimage"
+                android:alpha="0.5"/>
+
+            <ImageView
+                android:id="@+id/cameraIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/camera"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anas Bin Rashid"
+            android:textSize="23sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            android:paddingTop="8dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/formContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="14sp"
+            android:textColor="#59442F"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/input_background"
+            android:hint="Anas Bin Rashid"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:textColor="#918C8C"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textSize="14sp"
+            android:textColor="#59442F"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/input_background"
+            android:hint="anasbinrashid"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:textColor="#918C8C"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Number"
+            android:textSize="14sp"
+            android:textColor="#59442F"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/etContact"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/input_background"
+            android:hint="+92 335 5555195"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:textColor="#918C8C"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Bio"
+                android:textSize="14sp"
+                android:textColor="#59442F"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:layout_weight="2"/>
+
+            <EditText
+                android:id="@+id/Bio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint="@string/biosample"
+                android:padding="5dp"
+                android:textSize="14sp"
+                android:textColorHint="#B5B5B5"
+                android:textColor="@android:color/black"
+                android:gravity="center_vertical"
+                android:layout_weight="1.25"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

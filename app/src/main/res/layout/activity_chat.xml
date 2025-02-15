@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="16dp"
+    android:id="@+id/main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userName"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/back"
+            android:layout_weight="0"/>
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anas Bin Rashid"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:layout_weight="7"/>
+
+        <ImageView
+            android:id="@+id/call"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/call"
+            android:layout_weight="3"
+            app:tint="@color/black"/>
+
+        <ImageView
+            android:id="@+id/vcall"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/videocall"
+            android:layout_weight="3"
+            app:tint="@color/black"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/profileSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_below="@id/userName"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="24dp">
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/anas"
+            android:background="@drawable/roundimage"
+            android:clipToOutline="true"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/vp"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/roundbutton2"
+            android:text="View Profile"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/chats"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_below="@id/profileSection"
+        android:layout_above="@id/messageInputSection"
+        android:scrollbarSize="0dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbutton2"
+                android:padding="10dp"
+                android:layout_gravity="end">
+                <TextView
+                    android:text="Hello, How are you?"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:30"
+                android:textSize="12sp"
+                android:textColor="#ACB5BC"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/anas"
+                    android:scaleType="centerCrop"
+                    android:clipToOutline="true"
+                    android:background="@drawable/roundimage"
+                    android:layout_marginEnd="8dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roundbutton2"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:text="Hi, I am great, Wbu?"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:32"
+                android:textSize="12sp"
+                android:textColor="#ACB5BC"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="12dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbutton2"
+                android:padding="10dp"
+                android:layout_gravity="end">
+                <TextView
+                    android:text="I am doing well"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01:30"
+                android:textSize="12sp"
+                android:textColor="#ACB5BC"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/anas"
+                    android:scaleType="centerCrop"
+                    android:clipToOutline="true"
+                    android:background="@drawable/roundimage"
+                    android:layout_marginEnd="8dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roundbutton2"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:text="Good to know"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01:30"
+                android:textSize="12sp"
+                android:textColor="#ACB5BC"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="12dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbutton2"
+                android:padding="10dp"
+                android:layout_gravity="end">
+                <TextView
+                    android:text="I am doing assignment"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01:30"
+                android:textSize="12sp"
+                android:textColor="#ACB5BC"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/anas"
+                    android:scaleType="centerCrop"
+                    android:clipToOutline="true"
+                    android:background="@drawable/roundimage"
+                    android:layout_marginEnd="8dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roundbutton2"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:text="It is very lengthy"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01:30"
+                android:textSize="12sp"
+                android:textColor="#ACB5BC"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="12dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbutton2"
+                android:padding="10dp"
+                android:layout_gravity="end">
+                <TextView
+                    android:text="True"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01:30"
+                android:textSize="12sp"
+                android:textColor="#ACB5BC"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/anas"
+                    android:scaleType="centerCrop"
+                    android:clipToOutline="true"
+                    android:background="@drawable/roundimage"
+                    android:layout_marginEnd="8dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roundbutton2"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:text="OK Bye Bro"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01:30"
+                android:textSize="12sp"
+                android:textColor="#ACB5BC"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="12dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/anas"
+                    android:scaleType="centerCrop"
+                    android:clipToOutline="true"
+                    android:background="@drawable/roundimage"
+                    android:layout_marginEnd="8dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roundbutton2"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:text="Nah Wait"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01:30"
+                android:textSize="12sp"
+                android:textColor="#ACB5BC"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="12dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbutton2"
+                android:padding="10dp"
+                android:layout_gravity="end">
+                <TextView
+                    android:text="Yes?"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01:30"
+                android:textSize="12sp"
+                android:textColor="#ACB5BC"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/messageInputSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/roundbutton"
+        android:backgroundTint="#988B7E"
+        android:padding="12dp"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:id="@+id/etMessageInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#988B7E"
+            android:hint="Typing..."
+            android:padding="10dp"
+            android:textColorHint="#CBC4BE"
+            android:textSize="18sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageView
+            android:id="@+id/sendMessageButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/send"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+</RelativeLayout>
