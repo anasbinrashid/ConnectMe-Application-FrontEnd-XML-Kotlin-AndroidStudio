@@ -1,25 +1,47 @@
 package com.anasbinrashid.i220907
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
+import android.view.ViewOutlineProvider
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class CameraActivity : AppCompatActivity() {
+    private fun applyRoundedCornersToAllImages(rootView: View) {
+        if (rootView is ImageView) {
+            rootView.outlineProvider = ViewOutlineProvider.BACKGROUND
+            rootView.clipToOutline = true
+        } else if (rootView is ViewGroup) {
+            for (i in 0 until rootView.childCount) {
+                applyRoundedCornersToAllImages(rootView.getChildAt(i))
+            }
+        }
+    }
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_camera)
+        applyRoundedCornersToAllImages(findViewById(R.id.main))
 
         val cross = findViewById<ImageView>(R.id.cross)
 
         cross.setOnClickListener{
             val intent = Intent(this, AddActivity::class.java)
             startActivity(intent)
+        }
+
+        val rotateButton = findViewById<ImageView>(R.id.rot)
+        rotateButton.setOnClickListener {
+            Toast.makeText(this, "Camera Rotated", Toast.LENGTH_SHORT).show()
         }
 
         val next = findViewById<TextView>(R.id.next)

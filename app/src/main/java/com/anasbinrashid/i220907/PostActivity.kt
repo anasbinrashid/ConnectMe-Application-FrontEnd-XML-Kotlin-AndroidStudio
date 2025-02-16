@@ -2,23 +2,48 @@ package com.anasbinrashid.i220907
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
+import android.view.ViewOutlineProvider
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class PostActivity : AppCompatActivity() {
+    private fun applyRoundedCornersToAllImages(rootView: View) {
+        if (rootView is ImageView) {
+            rootView.outlineProvider = ViewOutlineProvider.BACKGROUND
+            rootView.clipToOutline = true
+        } else if (rootView is ViewGroup) {
+            for (i in 0 until rootView.childCount) {
+                applyRoundedCornersToAllImages(rootView.getChildAt(i))
+            }
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_post)
+        applyRoundedCornersToAllImages(findViewById(R.id.main))
 
         val close = findViewById<ImageView>(R.id.cross)
 
         close.setOnClickListener {
             val intent = Intent(this, AddActivity::class.java)
             startActivity(intent)
+        }
+
+        val share = findViewById<Button>(R.id.loginbutton)
+
+        share.setOnClickListener {
+            Toast.makeText(this, "New Post Made!", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

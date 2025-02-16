@@ -5,6 +5,9 @@ package com.anasbinrashid.i220907
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
+import android.view.ViewOutlineProvider
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -15,11 +18,24 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ContactsActivity : AppCompatActivity() {
+
+    private fun applyRoundedCornersToAllImages(rootView: View) {
+        if (rootView is ImageView) {
+            rootView.outlineProvider = ViewOutlineProvider.BACKGROUND
+            rootView.clipToOutline = true
+        } else if (rootView is ViewGroup) {
+            for (i in 0 until rootView.childCount) {
+                applyRoundedCornersToAllImages(rootView.getChildAt(i))
+            }
+        }
+    }
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_contacts)
+
+        applyRoundedCornersToAllImages(findViewById(R.id.main))
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 

@@ -80,6 +80,7 @@
                 android:src="@drawable/rotate"
                 android:clipToOutline="true"
                 android:padding="5dp"
+                android:id="@+id/rot"
                 android:backgroundTint="#817264"
                 android:background="@drawable/roundimage"
                 android:layout_alignParentBottom="true"

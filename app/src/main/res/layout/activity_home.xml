@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:text="My Community"
                 android:textColor="@color/black"
-                android:textSize="35sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -39,13 +39,13 @@
                 android:layout_height="wrap_content"
                 android:text="A place for all your questions"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
         </LinearLayout>
 
         <ImageView
             android:id="@+id/dmlist"
-            android:layout_width="80dp"
+            android:layout_width="60dp"
             android:layout_height="45dp"
             android:contentDescription="Direct Messages Icon"
             android:src="@drawable/dm" />
@@ -95,7 +95,8 @@
                 android:background="@drawable/roundimage"
                 android:clipToOutline="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/anas_" />
+                android:src="@drawable/anas_"
+                android:id="@+id/p1"/>
 
             <ImageView
                 android:layout_width="80dp"
@@ -103,7 +104,8 @@
                 android:layout_marginLeft="8dp"
                 android:background="@drawable/roundimage"
                 android:clipToOutline="true"
-                android:src="@drawable/anas_" />
+                android:src="@drawable/anas_"
+                android:id="@+id/p2"/>
 
             <ImageView
                 android:layout_width="80dp"
@@ -111,7 +113,8 @@
                 android:layout_marginLeft="8dp"
                 android:background="@drawable/roundimage"
                 android:clipToOutline="true"
-                android:src="@drawable/anas_" />
+                android:src="@drawable/anas_"
+                android:id="@+id/p3"/>
 
             <ImageView
                 android:layout_width="80dp"
@@ -119,7 +122,8 @@
                 android:layout_marginLeft="8dp"
                 android:background="@drawable/roundimage"
                 android:clipToOutline="true"
-                android:src="@drawable/anas_" />
+                android:src="@drawable/anas_"
+                android:id="@+id/p4"/>
 
             <ImageView
                 android:layout_width="80dp"
@@ -127,7 +131,8 @@
                 android:layout_marginLeft="8dp"
                 android:background="@drawable/roundimage"
                 android:clipToOutline="true"
-                android:src="@drawable/anas_" />
+                android:src="@drawable/anas_"
+                android:id="@+id/p5"/>
 
             <ImageView
                 android:layout_width="80dp"
@@ -135,7 +140,8 @@
                 android:layout_marginLeft="8dp"
                 android:background="@drawable/roundimage"
                 android:clipToOutline="true"
-                android:src="@drawable/anas_" />
+                android:src="@drawable/anas_"
+                android:id="@+id/p6"/>
 
         </LinearLayout>
     </HorizontalScrollView>

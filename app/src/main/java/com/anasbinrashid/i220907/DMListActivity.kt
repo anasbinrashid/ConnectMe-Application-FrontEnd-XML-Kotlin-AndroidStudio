@@ -2,6 +2,9 @@ package com.anasbinrashid.i220907
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
+import android.view.ViewOutlineProvider
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -11,10 +14,21 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class DMListActivity : AppCompatActivity() {
+    private fun applyRoundedCornersToAllImages(rootView: View) {
+        if (rootView is ImageView) {
+            rootView.outlineProvider = ViewOutlineProvider.BACKGROUND
+            rootView.clipToOutline = true
+        } else if (rootView is ViewGroup) {
+            for (i in 0 until rootView.childCount) {
+                applyRoundedCornersToAllImages(rootView.getChildAt(i))
+            }
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_dmlist)
+        applyRoundedCornersToAllImages(findViewById(R.id.main))
 
         val flg = findViewById<ImageView>(R.id.back_button)
 

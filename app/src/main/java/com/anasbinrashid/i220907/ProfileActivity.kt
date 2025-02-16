@@ -2,9 +2,14 @@
 
 package com.anasbinrashid.i220907
 
+import GridAdapter
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
+import android.view.ViewOutlineProvider
+import android.widget.GridView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -13,13 +18,40 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.util.Arrays
 
 class ProfileActivity : AppCompatActivity() {
+
+    private var gridView: GridView? = null
+    private var adapter: GridAdapter? = null
+    private val imageList: List<Int> = Arrays.asList(
+        R.drawable.anas, R.drawable.anas, R.drawable.anas, R.drawable.anas,
+        R.drawable.anas, R.drawable.anas, R.drawable.anas, R.drawable.anas,
+        R.drawable.anas, R.drawable.anas, R.drawable.anas, R.drawable.anas,
+        R.drawable.anas, R.drawable.anas, R.drawable.anas, R.drawable.anas,
+        R.drawable.anas, R.drawable.anas, R.drawable.anas
+    )
+
+    private fun applyRoundedCornersToAllImages(rootView: View) {
+        if (rootView is ImageView) {
+            rootView.outlineProvider = ViewOutlineProvider.BACKGROUND
+            rootView.clipToOutline = true
+        } else if (rootView is ViewGroup) {
+            for (i in 0 until rootView.childCount) {
+                applyRoundedCornersToAllImages(rootView.getChildAt(i))
+            }
+        }
+    }
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_profile)
+        applyRoundedCornersToAllImages(findViewById(R.id.main))
+
+        gridView = findViewById<View>(R.id.gridView) as GridView?
+        adapter = GridAdapter(this, imageList)
+        gridView?.setAdapter(adapter)
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         val selectedItemId = intent.getIntExtra("selectedItemId", R.id.navigation_profile)

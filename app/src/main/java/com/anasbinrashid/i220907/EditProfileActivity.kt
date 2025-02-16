@@ -2,21 +2,39 @@ package com.anasbinrashid.i220907
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
+import android.view.ViewOutlineProvider
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class EditProfileActivity : AppCompatActivity() {
+
+    private fun applyRoundedCornersToAllImages(rootView: View) {
+        if (rootView is ImageView) {
+            rootView.outlineProvider = ViewOutlineProvider.BACKGROUND
+            rootView.clipToOutline = true
+        } else if (rootView is ViewGroup) {
+            for (i in 0 until rootView.childCount) {
+                applyRoundedCornersToAllImages(rootView.getChildAt(i))
+            }
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_edit_profile)
+        applyRoundedCornersToAllImages(findViewById(R.id.main))
 
         val done = findViewById<TextView>(R.id.done)
 
         done.setOnClickListener {
+            Toast.makeText(this, "Changes Saved!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }

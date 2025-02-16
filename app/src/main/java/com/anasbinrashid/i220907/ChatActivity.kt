@@ -15,11 +15,23 @@ import androidx.core.view.WindowInsetsCompat
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewGroup
+import android.view.ViewOutlineProvider
 
 class ChatActivity : AppCompatActivity(), GestureDetector.OnGestureListener {
 
     private lateinit var gestureDetector: GestureDetector
 
+    private fun applyRoundedCornersToAllImages(rootView: View) {
+        if (rootView is ImageView) {
+            rootView.outlineProvider = ViewOutlineProvider.BACKGROUND
+            rootView.clipToOutline = true
+        } else if (rootView is ViewGroup) {
+            for (i in 0 until rootView.childCount) {
+                applyRoundedCornersToAllImages(rootView.getChildAt(i))
+            }
+        }
+    }
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +39,7 @@ class ChatActivity : AppCompatActivity(), GestureDetector.OnGestureListener {
         setContentView(R.layout.activity_chat)
 
         gestureDetector = GestureDetector(this, this)
+        applyRoundedCornersToAllImages(findViewById(R.id.main))
 
         val scrollView = findViewById<ScrollView>(R.id.chats)
         scrollView.post {

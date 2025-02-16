@@ -45,8 +45,8 @@
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:hint="Name"
         android:textColor="@color/black"
         android:padding="15dp"
@@ -56,8 +56,8 @@
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:hint="Username"
         android:textColor="@color/black"
         android:padding="15dp"
@@ -67,8 +67,8 @@
     <EditText
         android:id="@+id/phone"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:hint="Phone Number"
         android:textColor="@color/black"
         android:padding="15dp"
@@ -78,8 +78,8 @@
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:hint="Email"
         android:textColor="@color/black"
         android:padding="15dp"
@@ -89,8 +89,8 @@
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:textColor="@color/black"
         android:hint="Password"
         android:padding="15dp"
@@ -102,7 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:textColor="@color/black"
         android:textSize="17dp"
         android:text="By clicking Agree and continue below, I agree to" />
